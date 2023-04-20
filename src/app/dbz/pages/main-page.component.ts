@@ -20,15 +20,16 @@ export class MainPageComponent  {
     {
       name: 'Vegeta',
       power: 1500
-    },
-    {
-      name: 'Frezer',
-      power: 12000
     }
 
   ];
 
+  onNewCharacter(character: Character):void{
+    this.characters.push(character);
+  }
 
-
+  onDeleteCharacter(index: number):void{
+    this.characters.splice(index,1);
+  }
 
 }
