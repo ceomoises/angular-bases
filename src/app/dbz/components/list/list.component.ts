@@ -14,11 +14,13 @@ export class ListComponent {
   }]
 
   @Output()
-  public onDelete = new EventEmitter<number>();
+  public onDelete = new EventEmitter<string>();
 
-  onDeleteCharacter(index:number):void{
-    // TODO: Emitir el ID del personaje
-    this.onDelete.emit(index);
+   //Como ID es opcional en la interfaz,
+  //hay que estar seguros de que haya uno.
+  onDeleteCharacter(id? :string):void{
+    if( !id ) return;
+    this.onDelete.emit(id);
   }
 
 
